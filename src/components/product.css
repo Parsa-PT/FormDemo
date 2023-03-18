@@ -1,0 +1,18 @@
+.img-hover:hover{
+    scale: 105%;
+    transition: all 0.3s ease-in-out;
+}
+
+.img-hover{
+    height: 15rem !important;
+    background-color: aqua !important;
+    width: 100% !important;
+    
+}
+
+.cardbg{
+    background: rgba(53, 53, 53, 0.25) !important;
+    backdrop-filter: blur(10px) !important;
+    /* height: 20rem !important; */
+    overflow: hidden;
+}

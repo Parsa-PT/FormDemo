@@ -1,0 +1,59 @@
+.navL:hover{
+    transition: all 0.1s ease;
+}
+.navbar{
+    background-color: rgba(60, 61, 62, 0.294);
+
+}
+
+
+.toggle{
+   border: none !important;;
+    /* background-color: aqua !important; */
+}
+
+
+.navbar{
+    box-shadow:  4px 4px 10px 0 rgb(255, 255, 255) ;
+    border-radius: 0 0 20px 10px;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: black !important;
+}
+
+
+.pro{
+    margin: 9px;
+    cursor : pointer;
+}
+
+.cart{
+    margin: 9px;
+    cursor : pointer;
+}
+
+@media only screen and (max-width: 990px) {
+
+    .cart{
+        width: 50px;
+        height: 20px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        left: 1rem;
+        margin: 1rem;
+        
+
+    }
+
+    .pro{
+        width: 50px;
+        height: 20px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        left: 3rem;
+        margin: 1rem;
+    }
+    
+  }

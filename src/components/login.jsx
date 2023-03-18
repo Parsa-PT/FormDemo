@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import './form.css'
-import { json, Link } from 'react-router-dom'
+import {  Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -43,7 +43,8 @@ const Login = (props) => {
         if(res.status === 200){
           setSuc('Login successful ')
           setInterval(()=>{
-            history('/acc')
+            history('/')
+            window.location.reload()
           },2000)
          
         }else{
@@ -67,18 +68,18 @@ const Login = (props) => {
 
 
   return (
-    <div>
-      <div className='Login'><h1>Login</h1></div>
-      
+    <div className='full'>
+
+      <h1>Login</h1>
       {suc ? <h2>{suc}</h2> : <h2 style={{color: 'red' }}>{faild}</h2>}
       
-      <div className='container'>
+      <div className='base-container'>
         <form onSubmit={LogHandle}>
             <input type="text" className='login-input'  placeholder='Username' name='fname' value={Uname} onChange={ e => setUname(e.target.value)}/>
             {err && Uname.length<=0 ? <label>You need to enter your name</label> : null}
             <input type="password" className='login-input'  placeholder='Password' name='pass' value={Pass} onChange={ e => setPass(e.target.value)}/>
             {err && Pass.length<=0 ? <label>You need to enter your password</label> : null}
-            {Submit ? <button>Done</button> : <button>Submit</button> }
+            {Submit ? <button className='btnreg'>Done</button> : <button className='btnreg'>Submit</button> }
             <p><Link style={{textDecoration : 'none'}} to='/reg'>If you don`t have an account <span >Register</span> </Link></p>
         </form>
 

@@ -1,7 +1,7 @@
 import {useEffect , useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import jwt_decode from "jwt-decode";
-
+import './form.css'
 
 const Account = ({Id}) => {
 
@@ -23,16 +23,20 @@ const Account = ({Id}) => {
 
     const logout = ()=>{
       localStorage.clear()
-      history('/home')
+      history('/')
+      window.location.reload()
     }
 
   return (
-    <div className='container2'>
-       <h3>username : {info.username}</h3> 
-        <h3>Email : {info.email}</h3> 
+    <div className='full'>
+      <h1>Profile</h1>
+    <div className='base-container2'>
+       <h4>username : {info.username}</h4> 
+        <h4>Email : {info.email}</h4> 
 
-        <button onClick={logout} style={{width : '100%' }}>Logout</button> 
+        <button className='btnreg' onClick={logout} style={{width : '100%' }}>Logout</button> 
       
+    </div>
     </div>
   )
 }

@@ -1,15 +1,23 @@
-.container{
+.base-container{
     width: 20rem;
     background: rgba(53, 53, 53, 0.25);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 15px 0;
     border-radius: 5px;
+    margin-top: 11vh;
+}
+.full{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 
-.container2{
+.base-container2{
     width: 20rem;
     background: rgba(53, 53, 53, 0.25);
     backdrop-filter: blur(10px);
@@ -17,9 +25,11 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    padding: 15px 0;
+    padding: 25px 0;
     border-radius: 5px;
     padding: 15px;
+    margin-top: 10vh;
+
 }
 
 h2{
@@ -36,11 +46,12 @@ input {
   border: none;
   padding: 10px;
   display: block;
-  margin-bottom: 9px;
+  margin-bottom: 10px !important;
   border-bottom: 2px solid ;
   outline: none;
   border-radius: 10px 10px 0 0 ;
-  width: 90%;
+  width: 100%;
+  /* transform: translateX(4%); */
 }
 
 
@@ -52,7 +63,7 @@ label {
 
 
 
-button{
+.btnreg{
   align-items: center;
   appearance: none;
   background-color: #FCFCFD;
@@ -82,18 +93,19 @@ button{
   will-change: box-shadow,transform;
   font-size: 18px;
   width: 100%;
+  margin-bottom: 10px;
 }
 
-button:focus {
+.btnreg:focus {
   box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
-button:hover {
+.btnreg:hover {
   box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
-button:active {
+.btnreg:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 }
@@ -111,4 +123,5 @@ button:active {
 .Login{
   font-family : sans-serif;
   text-align : center;
+  margin-top: auto;
 }

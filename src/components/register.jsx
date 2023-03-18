@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 
+
 const Register = () => {
     const [username , setFname] = useState('')
     const [fullname , setLname] = useState('')
@@ -13,8 +14,8 @@ const Register = () => {
     const [Pass , setPass] = useState('')
     const [CPass , setCPass] = useState('')
     let [Submit , setSubmit] = useState(false)
+    let [disabled , setDisabled] = useState(false)
     const [err , setErr] = useState('')
-    const [done , setDone] = useState('')
     const [Id , setId] = useState()
     const history = useNavigate()
     
@@ -26,11 +27,15 @@ const Register = () => {
 
     const RegHandle = async(e)=>{
         e.preventDefault()
+      
 
         if(username || fullname || Email || Pass || CPass === ''){
             setSubmit(false)
             setErr(true)
-        } else{
+            if(Pass !== CPass){
+                alert('Passwords is not match')
+            }
+        }else{
           setSubmit(Submit = true)
         }
 
@@ -50,34 +55,32 @@ const Register = () => {
                 }
             })
             .then((response) => {
-                if(response.status === 201){
+                if(response.ok === true){
                     setTimeout(()=>{
-                        history('/')
-                    },2000)
+                        history('/login')
+                    },1000)
+
+                    setDisabled(true)
                 }else{
-                    alert('Bad requests please try again')
+                    alert('please try again')
                 }
 
                 return(
                     response.json()
                 )
             })
-            .then((json) => console.log(json));
+            
 
             
         }
-        console.log(Id)
-
-
-        
     }
 
 
   return (
-    <div className='container'>
-        <div className='register' ><h1>Register</h1></div>
+   <div className='full'>
+    <h1>Sign up</h1>
+    <div className='base-container'>
         <form onSubmit={RegHandle}>
-            <h2>{done}</h2>
             <input type="text"  placeholder='Username' name='username' value={username} onChange={ e => setFname(e.target.value)}/>
             {err && username.length<=0 ? <label>You need to enter your name</label> : null}
             <input type="text"  placeholder='Fullname' name='fullname' value={fullname} onChange={ e => setLname(e.target.value)}/>
@@ -88,11 +91,13 @@ const Register = () => {
             {err && Pass.length<=0 ? <label>You need to enter your password</label> : null}
             <input type="password"  placeholder='Confirm' name='pass' value={CPass} onChange={ e => setCPass(e.target.value)}/>
             {err && CPass.length<=0 ? <label>You need to confirm your password</label> : null}
-            {Submit ? <button type='submit' >Done</button> : <button type='submit'>Submit</button> }
+            {Submit ? <button className='btnreg' type='submit' >Done</button> : <button className='btnreg' disabled={disabled} type='submit'>Submit</button> }
 
-           <p > <Link style={{textDecoration : 'none'}} to='/' >If you have an account <span >Login</span> </Link></p>
+           <p > <Link style={{textDecoration : 'none'}} to='/login' >If you have an account <span >Login</span> </Link></p>
+
         </form>
     </div>
+    </div> 
   )
 }
 
