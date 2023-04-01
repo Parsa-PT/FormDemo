@@ -13,6 +13,6 @@
 .cardbg{
     background: rgba(53, 53, 53, 0.25) !important;
     backdrop-filter: blur(10px) !important;
-    /* height: 20rem !important; */
+    /* height: 30rem !important; */
     overflow: hidden;
 }

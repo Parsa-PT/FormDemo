@@ -1,0 +1,32 @@
+.bg{
+    margin-top: 3rem;
+    width: 100%;
+    height: 100vh;
+    background: rgba(53, 53, 53, 0.25) !important;
+    backdrop-filter: blur(7px) !important;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: relative;
+}
+.img{
+    position: absolute;
+    top: -1rem;
+    box-shadow: 5px 5px 15px;
+    width: 20rem;
+
+}
+
+.img img{
+    width: 100%;
+}
+
+.info{
+    position: absolute;
+    top: 15rem;
+    width: 90vw;
+}
+
+.info h2{
+    color: black;
+}
